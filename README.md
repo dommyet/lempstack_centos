@@ -191,3 +191,43 @@ Replace the default private key with your own key located in:
 ```
 ~/.ssh/authorized_keys
 ```
+
+### SELinux Settings
+
+To get the status of a system running SELinux:
+
+```
+sestatus
+```
+
+The output should indicate SELinux enabled and enforcing on default CentOS installation:
+
+```
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+```
+
+To display security context of a file or folder:
+
+```
+ls -Z
+```
+
+Change file SELinux security context to  `Read-only directories and files used by php-fpm`:
+
+```
+sudo chcon -Rv --type="httpd_sys_content_t" www/
+```
+
+Change file SELinux security context to  `Readable and writable directories and files used by php-fpm`:
+
+```
+sudo chcon -Rv --type="httpd_sys_rw_content_t" www/
+```
