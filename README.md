@@ -243,3 +243,11 @@ Change the web folder owner to  `apache:apache`:
 ```
 sudo chown -R apache:apache example/
 ```
+
+### dhparam Generation
+
+The generation process would take a few minutes to complete.
+
+```
+sudo openssl dhparam -out /etc/pki/tls/private/dhparam.pem 4096 && sudo chmod 0640 /etc/pki/tls/private/dhparam.pem
+```
