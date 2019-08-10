@@ -232,10 +232,14 @@ Change file SELinux security context to  `Readable and writable directories and 
 sudo chcon -Rv --type="httpd_sys_rw_content_t" www/
 ```
 
-Change any new nginx site configuation file SELinux security context to  `httpd_config_t`:
+Change any new nginx site configuation file SELinux security context to  `httpd_config_t` and user in security context to  `system_u`:
 
 ```
 sudo chcon -v --type="httpd_config_t" /etc/nginx/conf.d/example.conf
+```
+
+```
+sudo chcon -v --user="system_u" /etc/nginx/conf.d/example.conf
 ```
 
 Change the web folder owner to  `apache:apache`:
