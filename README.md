@@ -248,6 +248,18 @@ Change the web folder owner to  `apache:apache`:
 sudo chown -R apache:apache example/
 ```
 
+Allow web content to access network resources:
+
+```
+setsebool -P httpd_can_network_connect=1
+```
+
+Allow web content (e.g. Adminer) to access database on the network:
+
+```
+setsebool -P httpd_can_network_connect_db=1
+```
+
 ### dhparam Generation
 
 The generation process would take a few minutes to complete.
