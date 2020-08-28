@@ -94,6 +94,13 @@ php74 --version
 php74 --modules
 ```
 
+Command to enable and start php74:
+
+```
+sudo systemctl enable php74-php-fpm
+sudo systemctl start php74-php-fpm
+```
+
 ## Initial Configurations
 
 ### Kernel
