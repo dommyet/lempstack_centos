@@ -65,33 +65,33 @@ sudo yum install nginx
 
 ### Remi's RPM Repository
 
-We would install  `php73` in  `multiple versions simultaneously` mode in CentOS 7.
+We would install  `php74` in  `multiple versions simultaneously` mode in CentOS 8.
 
 For more information, please refer to the [Configuration wizard](https://rpms.remirepo.net/wizard/).
 
 Command to install the Remi repository configuration package:
 
 ```
-sudo yum install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
+sudo dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
 ```
 
-Command to install the php73 collection:
+Command to install the php74 collection:
 
 ```
-sudo yum install php73
+sudo dnf install php74
 ```
 
 Command to install additional packages:
 
 ```
-sudo yum install php73-php-fpm
+sudo dnf install php74-php-fpm
 ```
 
 Command to check the installed version and available extensions:
 
 ```
-php73 --version
-php73 --modules
+php74 --version
+php74 --modules
 ```
 
 ## Initial Configurations
