@@ -78,6 +78,19 @@ sudo yum install nginx
 
 When prompted to accept the GPG key, verify that the fingerprint matches `573B FD6B 3D8F BC64 1079 A6AB ABF5 BD82 7BD9 BF62`, and if so, accept it.
 
+Command to check nginx configurations:
+
+```
+sudo nginx -t
+```
+
+Command to enable and start nginx:
+
+```
+sudo systemctl enable nginx
+sudo systemctl start nginx
+```
+
 ### Remi's RPM Repository
 
 We would install  `php74` in  `multiple versions simultaneously` mode in CentOS 8.
