@@ -18,11 +18,22 @@ sudo yum install epel-release
 
 ### ELRepo
 
-Import the public key, and install ELRepo for RHEL-7, SL-7 or CentOS-7:
+Import the public key for ELRepo:
 
 ```
 sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
-sudo yum install https://www.elrepo.org/elrepo-release-7.0-4.el7.elrepo.noarch.rpm
+```
+
+Install ELRepo for RHEL-8 or CentOS-8:
+
+```
+sudo yum install https://www.elrepo.org/elrepo-release-8.el8.elrepo.noarch.rpm
+```
+
+Install ELRepo for RHEL-7, SL-7 or CentOS-7:
+
+```
+sudo yum install https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
 ```
 
 ### nginx Repository
@@ -42,6 +53,7 @@ baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
 gpgcheck=1
 enabled=1
 gpgkey=https://nginx.org/keys/nginx_signing.key
+module_hotfixes=true
 
 [nginx-mainline]
 name=nginx mainline repo
@@ -49,6 +61,7 @@ baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/
 gpgcheck=1
 enabled=0
 gpgkey=https://nginx.org/keys/nginx_signing.key
+module_hotfixes=true
 ```
 
 By default, the repository for stable nginx packages is used. If you would like to use mainline nginx packages, run the following command:
@@ -62,6 +75,8 @@ To install nginx, run the following command:
 ```
 sudo yum install nginx
 ```
+
+When prompted to accept the GPG key, verify that the fingerprint matches `573B FD6B 3D8F BC64 1079 A6AB ABF5 BD82 7BD9 BF62`, and if so, accept it.
 
 ### Remi's RPM Repository
 
