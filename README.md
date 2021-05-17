@@ -296,5 +296,5 @@ setsebool -P httpd_can_network_connect_db=1
 The generation process would take a few minutes to complete.
 
 ```
-sudo openssl dhparam -out /etc/pki/tls/private/dhparam.pem 4096 && sudo chmod 0640 /etc/pki/tls/private/dhparam.pem
+sudo openssl dhparam -out /etc/pki/tls/private/dhparam.key 4096 && sudo chmod 0640 /etc/pki/tls/private/dhparam.key
 ```
