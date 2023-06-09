@@ -93,7 +93,7 @@ sudo systemctl start nginx
 
 ### Remi's RPM Repository
 
-We would install  `php80` in  `multiple versions simultaneously` mode in CentOS 8.
+We would install  `php82` in  `multiple versions simultaneously` mode in CentOS 8.
 
 For more information, please refer to the [Configuration wizard](https://rpms.remirepo.net/wizard/).
 
@@ -103,30 +103,30 @@ Command to install the Remi repository configuration package:
 sudo dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
 ```
 
-Command to install the php80 collection:
+Command to install the php82 collection:
 
 ```
-sudo dnf install php80
+sudo dnf install php82
 ```
 
 Command to install additional packages:
 
 ```
-sudo dnf install php80-php-fpm
+sudo dnf install php82-php-fpm
 ```
 
 Command to check the installed version and available extensions:
 
 ```
-php80 --version
-php80 --modules
+php82 --version
+php82 --modules
 ```
 
-Command to enable and start php74:
+Command to enable and start php82:
 
 ```
-sudo systemctl enable php80-php-fpm
-sudo systemctl start php80-php-fpm
+sudo systemctl enable php82-php-fpm
+sudo systemctl start php82-php-fpm
 ```
 
 ## Initial Configurations
